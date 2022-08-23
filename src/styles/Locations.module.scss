@@ -30,8 +30,9 @@
     gap: 10px;
     list-style-type: none;
     padding: 0px;
-    overflow: scroll;
     font-size: large;
+    max-height: 70vh;
+    overflow: scroll;
 }
 
 .tableContent > h1 {
