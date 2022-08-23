@@ -12,9 +12,11 @@ function CharacterDetails({ character }) {
       >
         <img src={character.image} alt="" height="200px" width="200px" />
         <div className={styles.characterInfo}>
-          <span>{character.name}</span>
-          <span>{character.species}</span>
-          <span>{character.gender}</span>
+          <span style={{ fontSize: "20px", fontWeight: "600" }}>
+            {character.name}
+          </span>
+          <span>Species - {character.species}</span>
+          <span>Gender - {character.gender}</span>
         </div>
       </div>
     </Link>
