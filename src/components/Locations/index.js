@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/Locations.module.scss";
+import styles from "./Locations.module.scss";
 import { Link } from "react-router-dom";
 
 const Locations = () => {

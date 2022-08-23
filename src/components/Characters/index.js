@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/Characters.module.scss";
+import styles from "./Characters.module.scss";
 
 function CharacterDetails({ character }) {
   return (

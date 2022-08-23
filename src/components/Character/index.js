@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "../styles/Character.module.scss";
+import styles from "./Character.module.scss";
 import { Link } from "react-router-dom";
 
 const Character = () => {
