@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Locations.module.scss";
 import { Link } from "react-router-dom";
-/* Could organize imports, see App.js comments */
 
 const Locations = () => {
-  /*
-    You could move the state management and fetching part into a hook.
-    Lets call that hook useLocations.
-
-    You can then use it like this:
-    const locations = useLocations()
-  */
   const [locations, setLocations] = useState();
 
   useEffect(() => {

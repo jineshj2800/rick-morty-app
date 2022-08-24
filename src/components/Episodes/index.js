@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Episodes.module.scss";
-/* Could organize imports, see App.js comments */
 
 const Episodes = () => {
-  /*
-    You could move the state management and fetching part into a hook.
-    Lets call that hook useEpisodes.
-
-    You can then use it like this:
-    const episodes = useEpisodes()
-  */
   const [episodes, setEpisodes] = useState();
 
   useEffect(() => {

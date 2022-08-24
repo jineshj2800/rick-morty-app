@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Characters.module.scss";
-/* Could organize imports, see App.js comments */
 
-/* Arrow function could be used here */
 function CharacterDetails({ character }) {
   return (
     <Link to={`${character.id}`}>
@@ -26,13 +24,6 @@ function CharacterDetails({ character }) {
 }
 
 const Characters = () => {
-  /*
-    You could move the state management and fetching part into a hook.
-    Lets call that hook useCharacters.
-
-    You can then use it like this:
-    const characters = useCharacters()
-  */
   const [characters, setCharacters] = useState();
 
   useEffect(() => {
