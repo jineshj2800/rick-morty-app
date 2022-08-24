@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { useEpisodesByApi } from "../../hooks/useEpisodeByApi";
+// import { useEpisodesByApi } from "../../hooks/useEpisodeByApi";
 
 const useCharacterDataById = (characterId) => {
   const [character, setCharacter] = useState();

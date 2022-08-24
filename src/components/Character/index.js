@@ -1,35 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Character.module.scss";
 import { Link } from "react-router-dom";
+import { useCharacterDataById } from "./useCharacterDataById";
+import { useEpisodesByApi } from "../../hooks/useEpisodeByApi";
 
 const Character = () => {
   const { characterId } = useParams();
-  const [character, setCharacter] = useState();
-  const [episodes, setEpisodes] = useState([]);
-
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/" + characterId)
-      .then((response) => response.ok && response.json())
-      .then((data) => setCharacter(data))
-      .catch((error) => {
-        throw error;
-      });
-  }, [characterId]);
-
-  useEffect(() => {
-    if (!character || episodes.length === character.episode.length) return;
-    const episodeApi = character.episode[episodes.length];
-    fetch(episodeApi)
-      .then((response) => response.ok && response.json())
-      .then((data) => {
-        console.log(data);
-        setEpisodes([...episodes, data]);
-      })
-      .catch((error) => {
-        throw error;
-      });
-  }, [character, episodes]);
+  const { character } = useCharacterDataById(characterId);
+  const { episodes } = useEpisodesByApi(character && character.episode);
 
   return (
     character && (
