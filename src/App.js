@@ -5,7 +5,27 @@ import Episodes from "./components/Episodes";
 import Characters from "./components/Characters";
 import Locations from "./components/Locations";
 import Character from "./components/Character";
+/*
+  Try to organize your imports and use comments for grouping them. This would
+  improve the readability of your code, and make other developers easily 
+  understand what all code this module is importing. For example:
 
+  // Libraries
+  import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+  // Components
+  import Episodes from "./components/Episodes";
+  import Characters from "./components/Characters";
+  import Locations from "./components/Locations";
+  import Character from "./components/Character";
+
+  // Styles
+  import "./App.scss";
+*/
+
+/*
+  You could have used an arrow function here
+*/
 function App() {
   return (
     <Router>
