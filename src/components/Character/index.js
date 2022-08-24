@@ -2,9 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Character.module.scss";
 import { Link } from "react-router-dom";
+/* Could organize imports, see App.js comments */
 
 const Character = () => {
   const { characterId } = useParams();
+
+  /*
+    Implement a hook with the name useCharacterData. It
+    should return character and episodes info for that character.
+    All the logic below will move into that hook
+
+    Then you can directly use it like this:
+    const { episodes, character } = useCharacterData(characterId)
+  */
   const [character, setCharacter] = useState();
   const [episodes, setEpisodes] = useState([]);
 
@@ -17,6 +27,13 @@ const Character = () => {
       });
   }, [characterId]);
 
+  /* 
+    Your current approach for fetching episodes involves fetching one
+    episode at a time sequentially. Instead, you must use parallelism
+    capability to fetch all episodes in parallel.
+    See how you can use loops, async/await and Promise.all to achieve
+    parallel fetch calls.
+  */
   useEffect(() => {
     if (!character || episodes.length === character.episode.length) return;
     const episodeApi = character.episode[episodes.length];
