@@ -1,5 +1,8 @@
+// Libraries
 import React from "react";
 import { Link } from "react-router-dom";
+
+// Styles
 import styles from "./NavSideBar.module.scss";
 
 const NavSideBar = () => {

@@ -1,6 +1,9 @@
+// Libraries
 import React, { useState, useEffect } from "react";
-import styles from "./Locations.module.scss";
 import { Link } from "react-router-dom";
+
+// Styles
+import styles from "./Locations.module.scss";
 
 const Locations = () => {
   const [locations, setLocations] = useState();

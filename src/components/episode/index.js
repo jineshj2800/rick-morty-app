@@ -1,29 +1,16 @@
+// Libraries
 import React from "react";
+import { useParams } from "react-router-dom";
 
-import { Link, useParams } from "react-router-dom";
+// Components
+import FeaturedCharacter from "./FeaturedCharacter";
+
+// Hooks
 import { useEpisodeDataById } from "./useEpisodeDataById";
 import { useCharacterByApi } from "../../hooks/useCharacterByApi";
 
+// Styles
 import styles from "./Episode.module.scss";
-
-const FeaturedCharacter = ({ character }) => {
-  return (
-    <Link to={"/characters/" + character.id}>
-      <div
-        className={`${styles.character} ${
-          styles[character.status.toLowerCase()]
-        }`}
-      >
-        <img src={character.image} alt="" height="150px" width="150px" />
-        <div className={styles.characterInfo}>
-          <span className={styles.characterName}>{character.name}</span>
-          <span>Species - {character.species}</span>
-          <span>Gender - {character.gender}</span>
-        </div>
-      </div>
-    </Link>
-  );
-};
 
 const Episode = () => {
   const { episodeId } = useParams();

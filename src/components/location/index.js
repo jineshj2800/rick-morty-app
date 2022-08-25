@@ -1,29 +1,16 @@
+// Libraries
 import React from "react";
+import { useParams } from "react-router-dom";
 
-import { Link, useParams } from "react-router-dom";
+// Components
+import Resident from "./Resident";
+
+// Hooks
 import { useLocationDataById } from "./useLocationDataById";
 import { useCharacterByApi } from "../../hooks/useCharacterByApi";
 
+// Styles
 import styles from "./Location.module.scss";
-
-const Resident = ({ character }) => {
-  return (
-    <Link to={"/characters/" + character.id}>
-      <div
-        className={`${styles.character} ${
-          styles[character.status.toLowerCase()]
-        }`}
-      >
-        <img src={character.image} alt="" height="150px" width="150px" />
-        <div className={styles.characterInfo}>
-          <span className={styles.characterName}>{character.name}</span>
-          <span>Species - {character.species}</span>
-          <span>Gender - {character.gender}</span>
-        </div>
-      </div>
-    </Link>
-  );
-};
 
 const Location = () => {
   const { locationId } = useParams();

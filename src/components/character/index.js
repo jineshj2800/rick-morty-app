@@ -1,9 +1,14 @@
+// Libraries
 import React from "react";
-import { useParams } from "react-router-dom";
-import styles from "./Character.module.scss";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+// Hooks
 import { useCharacterDataById } from "./useCharacterDataById";
 import { useEpisodesByApi } from "../../hooks/useEpisodeByApi";
+
+// Styles
+import styles from "./Character.module.scss";
 
 const Character = () => {
   const { characterId } = useParams();
@@ -38,18 +43,20 @@ const Character = () => {
         </div>
         <div className={styles.episodeList}>
           <h2 style={{ textDecoration: "underline" }}>Episodes Featured</h2>
-          {episodes &&
-            episodes.map((episode) => {
-              return (
-                <Link key={episode.id} to={`/episodes/${episode.id}`}>
-                  <li>
-                    <span>{episode.episode}</span>
-                    <span>{episode.name}</span>
-                    <span>{episode.air_date}</span>
-                  </li>
-                </Link>
-              );
-            })}
+          <ul className={styles.episodeInfo}>
+            {episodes &&
+              episodes.map((episode) => {
+                return (
+                  <Link key={episode.id} to={`/episodes/${episode.id}`}>
+                    <li>
+                      <span>{episode.episode}</span>
+                      <span>{episode.name}</span>
+                      <span>{episode.air_date}</span>
+                    </li>
+                  </Link>
+                );
+              })}
+          </ul>
         </div>
       </div>
     )
