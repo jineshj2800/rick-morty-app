@@ -1,0 +1,22 @@
+.navSideBar{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    border-right: solid rgb(210, 213, 213);
+    background-color: rgba(246, 248, 248, 0.819);
+    height: 100vh;
+    gap: 10px
+  }
+  
+  .navSideBar > a {
+    background-color: rgb(77, 177, 231);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: 250px;
+    height: 20px;
+    font-size: larger;
+    color: aliceblue;
+    padding: 10px;
+  }
+  
